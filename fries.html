@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>French Fries</title>
+    <script>
+        document.getElementById('friesButton').addEventListener('click', function() {
+            const friesPage = window.open('', '_blank');
+
+            friesPage.document.write(`
+            `);
+
+            friesPage.document.close();
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 20px; 
+        }
+
+        .fries {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #fff;
+            width: 300px; 
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .fries img {
+            width: 150px; 
+            height: 150px; 
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .fries h3 {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        .fries p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .order-button {
+            display: inline-block;
+            background-color: blue; 
+            color: white;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; 
+        }
+
+        .order-button:hover {
+            background-color: #cc0000; 
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .fries {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .fries {
+                width: 100%; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Our French Fries</h1>
+    <div class="menu-container">
+        <div class="fries">
+            <img src="classic.jpeg" alt="Classic Fries">
+            <h3>Classic Fries</h3>
+            <p>Price: 170</p>
+            <a href="order.html" class="order-button">Order Now</a>
+        </div>
+        <div class="fries">
+            <img src="cheesefries.jpeg" alt="Cheese Fries">
+            <h3>Cheese Fries</h3>
+            <p>Price: 220</p>
+            <a href="order.html" class="order-button">Order Now</a>
+        </div>
+        <div class="fries">
+            <img src="curley.jpeg" alt="Curly Fries">
+            <h3>Curly Fries</h3>
+            <p>Price: 190</p>
+            <a href="order.html" class="order-button">Order Now</a>
+        </div>
+        <div class="fries">
+            <img src="sweet.jpeg" alt="Sweet Potato Fries">
+            <h3>Sweet Potato Fries</h3>
+            <p>Price: 230</p>
+            <a href="order.html" class="order-button">Order Now</a>
+        </div>
+        <div class="fries">
+            <img src="chilli.jpeg" alt="Chili Fries">
+            <h3>Chili Fries</h3>
+            <p>Price: 195</p>
+            <a href="order.html" class="order-button">Order Now</a>
+        </div>
+        <div class="fries">
+            <img src="garlic.jpeg" alt="Garlic Parmesan Fries">
+            <h3>Garlic Parmesan Fries</h3>
+            <p>Price: 210</p>
+            <a href="order.html" class="order-button">Order Now</a>
+        </div>
+    </div>
+</body>
+</html>

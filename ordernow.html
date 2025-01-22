@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url("imgbg2.jpg");
+            background-size: cover;
+            color: white;
+        }
+
+        .order-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .item {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #totalCost {
+            margin-top: 20px;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .popup h2 {
+            margin: 0;
+            margin-bottom: 20px;
+        }
+
+        .popup p {
+            margin: 10px 0;
+            color: black;
+        }
+
+        .popup button {
+            background-color: #007bff;
+            margin-top: 20px;
+        }
+
+        .popup button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="order-container">
+        <h1>Order Your Food</h1>
+        <form id="orderForm">
+            <div class="item">
+                <label for="foodItem">Select Food Item</label>
+                <select id="foodItem" name="foodItem">
+                    <option value="">Choose Item</option>
+                    <option value="burger">Burger</option>
+                    <option value="pizza">Pizza</option>
+                    <option value="sandwich">Sandwich</option>
+                    <option value="dessert">Dessert</option>
+                </select>
+            </div>
+
+            <div id="additionalOptions"></div>
+
+            <div class="item">
+                <label for="address">Delivery Address</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+
+            <div class="item">
+                <label for="contact">Contact Number</label>
+                <input type="text" id="contact" name="contact" required>
+            </div>
+
+            <button type="submit">Order Now</button>
+        </form>
+
+        <div id="totalCost">
+            <h2>Total: RS: <span id="price">0</span></h2>
+        </div>
+    </div>
+
+    <div class="popup" id="confirmationPopup">
+        <div class="popup-content">
+            <h2>Order Confirmation</h2>
+            <p id="orderDetails"></p>
+            <p id="totalBill"></p>
+            <p id="estimatedTime"></p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('foodItem').addEventListener('change', function () {
+            const selectedItem = this.value;
+            const additionalOptionsDiv = document.getElementById('additionalOptions');
+            additionalOptionsDiv.innerHTML = '';
+
+            if (selectedItem === 'burger') {
+                additionalOptionsDiv.innerHTML = `
+                    <div class="item">
+                        <label for="burgerFlavor">Choose Flavor</label>
+                        <select id="burgerFlavor" name="burgerFlavor">
+                            <option value="0">Select Flavor</option>
+                            <option value="1500">Cheese - RS: 1500</option>
+                            <option value="2000">BBQ - RS: 2000</option>
+                            <option value="3000">Spicy - RS: 3000</option>
+                        </select>
+                    </div>
+                    <div class="item">
+                        <label for="burgerQuantity">Quantity</label>
+                        <input type="number" id="burgerQuantity" name="burgerQuantity" value="1" min="1">
+                    </div>
+                `;
+            } else if (selectedItem === 'pizza') {
+                additionalOptionsDiv.innerHTML = `
+                    <div class="item">
+                        <label for="pizzaFlavor">Choose Flavor</label>
+                        <select id="pizzaFlavor" name="pizzaFlavor">
+                            <option value="0">Select Flavor</option>
+                            <option value="2000">Margherita - RS: 2000</option>
+                            <option value="3500">Pepperoni - RS: 3500</option>
+                            <option value="3800">Veggie - RS: 3800</option>
+                        </select>
+                    </div>
+                    <div class="item">
+                        <label for="pizzaQuantity">Quantity</label>
+                        <input type="number" id="pizzaQuantity" name="pizzaQuantity" value="1" min="1">
+                    </div>
+                `;
+            } else if (selectedItem === 'sandwich') {
+                additionalOptionsDiv.innerHTML = `
+                    <div class="item">
+                        <label for="sandwichFlavor">Choose Flavor</label>
+                        <select id="sandwichFlavor" name="sandwichFlavor">
+                            <option value="0">Select Flavor</option>
+                            <option value="500">Cheese - RS: 500</option>
+                            <option value="1000">Chicken - RS: 1000</option>
+                            <option value="1500">Veggie - RS: 1500</option>
+                        </select>
+                    </div>
+                    <div class="item">
+                        <label for="sandwichQuantity">Quantity</label>
+                        <input type="number" id="sandwichQuantity" name="sandwichQuantity" value="1" min="1">
+                    </div>
+                `;
+            } else if (selectedItem === 'dessert') {
+                additionalOptionsDiv.innerHTML = `
+                    <div class="item">
+                        <label for="dessertFlavor">Choose Flavor</label>
+                        <select id="dessertFlavor" name="dessertFlavor">
+                            <option value="0">Select Flavor</option>
+                            <option value="400">Chocolate - RS: 400</option>
+                            <option value="1000">Vanilla - RS: 1000</option>
+                            <option value="1500">Strawberry - RS: 1500</option>
+                        </select>
+                    </div>
+                    <div class="item">
+                        <label for="dessertQuantity">Quantity</label>
+                        <input type="number" id="dessertQuantity" name="dessertQuantity" value="1" min="1">
+                    </div>
+                `;
+            }
+        });
+
+        document.getElementById('orderForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const selectedItem = document.getElementById('foodItem').value;
+            if (!selectedItem) {
+                alert("Please select a food item.");
+                return;
+            }
+
+            const address = document.getElementById('address').value;
+            const contact = document.getElementById('contact').value;
+            let price = 0;
+            let quantity = 1;
+            let flavorText = '';
+
+            if (selectedItem === 'burger') {
+                const flavorElement = document.getElementById('burgerFlavor');
+                price = parseFloat(flavorElement.value) || 0;
+                flavorText = flavorElement.options[flavorElement.selectedIndex].text.split(" - ")[0];
+                quantity = parseInt(document.getElementById('burgerQuantity').value) || 1;
+            } else if (selectedItem === 'pizza') {
+                const flavorElement = document.getElementById('pizzaFlavor');
+                price = parseFloat(flavorElement.value) || 0;
+                flavorText = flavorElement.options[flavorElement.selectedIndex].text.split(" - ")[0];
+                quantity = parseInt(document.getElementById('pizzaQuantity').value) || 1;
+            } else if (selectedItem === 'sandwich') {
+                const flavorElement = document.getElementById('sandwichFlavor');
+                price = parseFloat(flavorElement.value) || 0;
+                flavorText = flavorElement.options[flavorElement.selectedIndex].text.split(" - ")[0];
+                quantity = parseInt(document.getElementById('sandwichQuantity').value) || 1;
+            } else if (selectedItem === 'dessert') {
+                const flavorElement = document.getElementById('dessertFlavor');
+                price = parseFloat(flavorElement.value) || 0;
+                flavorText = flavorElement.options[flavorElement.selectedIndex].text.split(" - ")[0];
+                quantity = parseInt(document.getElementById('dessertQuantity').value) || 1;
+            }
+
+            const totalPrice = price * quantity;
+
+            document.getElementById('price').textContent = totalPrice;
+
+            document.getElementById('orderDetails').textContent = `Item: ${selectedItem.charAt(0).toUpperCase() + selectedItem.slice(1)} (Flavor: ${flavorText}, Quantity: ${quantity})`;
+            document.getElementById('totalBill').textContent = `Total Bill: RS: ${totalPrice}`;
+            document.getElementById('estimatedTime').textContent = `Estimated Delivery Time: 30 minutes`;
+            document.getElementById('confirmationPopup').style.display = 'flex';
+        });
+
+        function closePopup() {
+            document.getElementById('confirmationPopup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

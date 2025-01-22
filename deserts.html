@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Desserts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; 
+            gap: 20px; 
+        }
+
+        .dessert {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #fff;
+            width: 300px; 
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .dessert img {
+            width: 180px; 
+            height: 180px; 
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .dessert h3 {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        .dessert p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .order-button {
+            display: inline-block;
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; 
+        }
+
+        .order-button:hover {
+            background-color: blue; 
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dessert {
+                width: 45%; 
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dessert {
+                width: 100%; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Our Desserts</h1>
+    <div class="menu-container">
+        <div class="dessert">
+            <img src="chocolate.jpeg" alt="Chocolate Cake">
+            <h3>Chocolate Cake</h3>
+            <p>Price: 1220</p>
+            <a href="order.html" class="order-button">Order Now</a>
+        </div>
+        <div class="dessert">
+            <img src="cheesecake.jpeg" alt="Cheesecake">
+            <h3>Cheesecake</h3>
+            <p>Price: 230</p>
+            <a href="order.html" class="order-button">Order Now</a>
+        </div>
+        <div class="dessert">
+            <img src="icecream.jpeg" alt="Ice Cream">
+            <h3>Ice Cream</h3>
+            <p>Price: 190</p>
+            <a href="order.html" class="order-button">Order Now</a>
+        </div>
+        <div class="dessert">
+            <img src="brownie.jpeg" alt="Brownie">
+            <h3>Brownie</h3>
+            <p>Price: 210</p>
+            <a href="order.html" class="order-button">Order Now</a>
+        </div>
+        <div class="dessert">
+            <img src="macaron.jpeg" alt="Macarons">
+            <h3>Macarons</h3>
+            <p>Price: 340</p>
+            <a href="order.html" class="order-button">Order Now</a>
+        </div>
+        <div class="dessert">
+            <img src="tirumisu.jpeg" alt="Tiramisu">
+            <h3>Tiramisu</h3>
+            <p>Price: 370</p>
+            <a href="order.html" class="order-button">Order Now</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Masala Broast</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: white;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 20px; 
+        }
+
+        .broast {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #fff;
+            width: 300px; /* Fixed width for broast cards */
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .broast img {
+            width: 150px; /* Increased image size */
+            height: 150px; /* Set fixed height for images */
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .broast h3 {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+        .broast p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .order-button {
+            display: inline-block;
+            background-color: blue; 
+            color: white;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; 
+        }
+        .order-button:hover {
+            background-color: red; 
+        }
+        /* Responsive Dsign */
+        @media (max-width: 768px) {
+            .broast {
+                width: 45%; 
+            }
+        }
+        @media (max-width: 480px) {
+            .broast {
+                width: 100%; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Our Chicken Masala Broast</h1>
+    <div class="menu-container">
+        <div class="broast">
+            <img src="spicy.jpeg" alt="Spicy Broast">
+            <h3>Spicy Broast</h3>
+            <p>Price: 240</p>
+            <a href="order.html" class="order-button">Order Now</a>
+        </div>
+        <div class="broast">
+            <img src="garlicbrost.jpeg" alt="Garlic Broast">
+            <h3>Garlic Broast</h3>
+            <p>Price: 210</p>
+            <a href="order.html" class="order-button">Order Now</a>
+        </div>
+        <div class="broast">
+            <img src="zinger.jpeg" alt="Zinger Broast">
+            <h3>Zinger Broast</h3>
+            <p>Price: 430</p>
+            <a href="order.html" class="order-button">Order Now</a>
+        </div>
+        <div class="broast">
+            <img src="bbq.jpeg" alt="BBQ Broast">
+            <h3>BBQ Broast</h3>
+            <p>Price: 390</p>
+            <a href="order.html" class="order-button">Order Now</a>
+        </div>
+        <div class="broast">
+            <img src="cheesebroast.jpeg" alt="Cheese Broast">
+            <h3>Cheese Broast</h3>
+            <p>Price: 330</p>
+            <a href="order.html" class="order-button">Order Now</a>
+        </div>
+        <div class="broast">
+            <img src="herb.jpeg" alt="Herb Broast">
+            <h3>Herb Broast</h3>
+            <p>Price: 120</p>
+            <a href="order.html" class="order-button">Order Now</a>
+        </div>
+    </div>
+</body>
+</html>

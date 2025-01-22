@@ -1,0 +1,88 @@
+<!-- Order Section -->
+<body>
+    <section id="order" class="order-section">
+      <div class="container">
+        <div id="formSection">
+          <h2>Place Your Order</h2>
+          <p>Please fill out the form below to place your order.</p>
+          
+          <!-- Order Form -->
+          <form id="orderForm">
+          
+            <!-- Full Name Input -->
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your name" required>
+            
+            <!-- Contact Number Input -->
+            <label for="contactNumber">Contact Number:</label>
+            <input type="tel" id="contactNumber" name="contactNumber" placeholder="Enter your contact number" required>
+            
+            <!-- Email Input -->
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            
+            <!-- House Address Input -->
+            <label for="houseAddress">House Address:</label>
+            <input type="text" id="houseAddress" name="houseAddress" placeholder="Enter your house address" required>
+            
+            <!-- Items Quantity Input -->
+            <label for="itemsRequired">Kitne Chahiye:</label>
+            <input type="number" id="itemsRequired" name="itemsRequired" placeholder="Enter number of items" required>
+            
+            <!-- Submit Button -->
+            <button type="submit">Place Order</button>
+          </form>
+        </div>
+        <div id="confirmationMessage" style="display: none; margin-top: 40px; color: white; font-size: 40px; font-weight: bold;">
+          <p>Thanks for your order, your order has been placed!</p>
+        </div>
+      </div>
+    </section>
+    </body>
+    <style>
+      .order-section {
+        padding: 40px 20px;
+        color: white;
+        text-align: center;
+      }
+      #formSection {
+        display: block;
+      }
+      .order-section h2 {
+        margin-bottom: 20px;
+      }
+      .order-section form {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+    
+      /* Input and Button Styles */
+      .order-section input,
+      .order-section button {
+        padding: 10px;
+        font-size: 16px;
+        width: 100%;
+      }
+    
+      /* Button Style */
+      .order-section button {
+        background-color: orange;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      body {
+        background-image: url("imgbg2.jpg");
+      }
+    </style>
+    <script>
+      document.getElementById('orderForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        document.getElementById('formSection').style.display = 'none';
+        document.getElementById('confirmationMessage').style.display = 'block';
+      });
+    </script>
+    

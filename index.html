@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flavour Hub - Supper delicious Burger in town!</title>
+
+ <!-- 
+    - custom js link
+  -->
+  <script src="script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="cutlery.png" type="image/svg+xml">
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- 
+  font link google
+-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap"
+    rel="stylesheet">
+  <!--
+    banner
+  -->
+  <link rel="preload" as="image" href="hero-banner.png" media="min-width(768px)">
+  <link rel="preload" as="image" href="hero-banner-bg.png" media="min-width(768px)">
+  <link rel="preload" as="image" href="hero-bg.jpg">
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header> 
+    <div class="container">
+
+      <h1>
+        <a href="#" class="logo">Flavour Hub<span class="span">.</span></a>
+      </h1>
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li class="nav-item">
+            <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+          </li>
+         
+          <li class="nav-item">
+            <a href="#food-menu" class="navbar-link" data-nav-link>Shop</a>
+          </li>
+          <li class="nav-item">
+            <a href="ordernow.html" class="navbar-link" data-nav-link>Order now</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="contact.html" class="navbar-link" data-nav-link>Contact Us</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="header-btn-group">
+        <button class="search-btn" aria-label="Search" data-search-btn>
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+
+        <a href="ok.html">
+          <button class="btn btn-hover">Reservation</button>
+      </a>
+      
+        <button class="nav-toggle-btn" aria-label="Toggle Menu" data-menu-toggle-btn>
+          <span class="line top"></span>
+          <span class="line middle"></span>
+          <span class="line bottom"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+  <!-- 
+    - #SEARCH BOX
+  -->
+
+  <div class="search-container" data-search-container>
+
+    <div class="search-box">
+      <input type="search" name="search" aria-label="Search here" placeholder="Type keywords here..."
+        class="search-input">
+
+      <button class="search-submit" aria-label="Submit search" data-search-submit-btn>
+        <ion-icon name="search-outline"></ion-icon>
+      </button>
+    </div>
+    <button class="search-close-btn" aria-label="Cancel search" data-search-close-btn></button>
+  </div>
+  <main>
+    <article>
+      <!-- 
+        - #HERO
+      -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h5 class="hero-subtitle">Eat Sleep And Super</h5>
+            <h1 class="h1 hero-title">delicious Burger </h1>
+            <p class="hero-text"></p>
+            <a href="ok.html">
+              <button class="btn">Book A Table</button>
+          </a>
+          
+          </div>
+          <figure class="hero-banner">
+            <img src="hero-banner-bg.png" width="820" height="716" alt="" aria-hidden="true"
+              class="w-100 hero-img-bg">
+            <img src="Flying Burger.png" width="700" height="637" loading="lazy" alt="Burger"
+              class="w-100 hero-img">
+          </figure>
+        </div>
+      </section>
+      <section class="section food-menu" id="food-menu">
+        <div class="container">
+          <p class="section-subtitle">Popular Dishes</p>
+          <h2 class="h2 section-title">
+            Our Delicious <span class="span">Foods</span>
+          </h2>
+          <p class="section-text">
+            Eat healthy, live happily
+          </p>
+          <ul class="fiter-list">
+            <li>
+              <a href="softdrinks.html">
+                <button class="filter-btn">Soft Drinks</button>
+              </a>
+            </li>
+            <li>
+              <a href="fries.html">
+                <button class="filter-btn">French Fry</button>
+              </a>
+            </li>
+            <li>
+              <a href="chicken.html">
+                <button class="filter-btn">Chicken Masala Broast</button>
+              </a>
+            </li>
+            <li>
+              <a href="deserts.html">
+                <button class="filter-btn">Desserts</button>
+              </a>
+            </li>
+
+          </ul>
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Our Top-notch menus</title>
+              <style>
+                  body {
+                      font-family: Arial, sans-serif;
+                      text-align: center;
+                      margin: 20px;
+                      background-color: white;
+                  }
+          
+                  h1 {
+                      margin-bottom: 20px;
+                  }
+          
+                  .menu-container {
+                      display: flex;
+                      flex-wrap: wrap; 
+                      justify-content: center; 
+                      gap: 20px; 
+                  }
+          
+                  .broast {
+                      border: 1px solid #ddd;
+                      border-radius: 5px;
+                      padding: 20px;
+                      background-color: #fff;
+                      width: 300px; /* Fixed width for broast cards */
+                      text-align: center;
+                      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                  }
+          
+                  .broast img {
+                      width: 190px; /* Increased image size */
+                      height: 170px; /* Set fixed height for images */
+                      margin: 10px 0;
+                      border-radius: 5px;
+                  }
+                  .broast h3 {
+                      margin: 10px 0 5px;
+                      color: #333;
+                  }
+                  .broast p {
+                      color: #555;
+                      margin-bottom: 10px;
+                  }
+                  .order-button {
+                      display: inline-block;
+                      background-color: red; 
+                      color: white;
+                      padding: 10px 20px;
+                      font-size: 14px;
+                      font-weight: bold;
+                      border: none;
+                      border-radius: 5px;
+                      cursor: pointer;
+                      text-decoration: none; 
+                  }
+                  .order-button:hover {
+                      background-color: red; 
+                  }
+                  /* Responsive Dsign */
+                  @media (max-width: 768px) {
+                      .broast {
+                          width: 45%; 
+                      }
+                  }
+                  @media (max-width: 480px) {
+                      .broast {
+                          width: 100%; 
+                      }
+                  }
+              </style>
+          </head>
+          <body>
+              <h1>Our Top-notch Menu</h1>
+              <div class="menu-container">
+                  <div class="broast">
+                      <img src="img1.jpg" alt="Spicy Broast">
+                      <h3>White Karahai</h3>
+                      <p>Price: 799</p>
+                      <a href="order.html" class="order-button">Order Now</a>
+                  </div>
+                  <div class="broast">
+                      <img src="img2.jpg" alt="Garlic Broast">
+                      <h3>Biryani</h3>
+                      <p>Price: 400</p>
+                      <a href="order.html" class="order-button">Order Now</a>
+                  </div>
+                  <div class="broast">
+                      <img src="img3.jpg" alt="Zinger Broast">
+                      <h3>Zinger Burger</h3>
+                      <p>Price: 310</p>
+                      <a href="order.html" class="order-button">Order Now</a>
+                  </div>
+                  <div class="broast">
+                      <img src="img4.jpg" alt="BBQ Broast">
+                      <h3>Pizza</h3>
+                      <p>Price: 999</p>
+                      <a href="order.html" class="order-button">Order Now</a>
+                  </div>
+                  <div class="broast">
+                      <img src="img5.jpg" alt="Cheese Broast">
+                      <h3>Chicken Broast</h3>
+                      <p>Price: 410</p>
+                      <a href="order.html" class="order-button">Order Now</a>
+                  </div>
+                  <div class="broast">
+                      <img src="img6.jpg" alt="Herb Broast">
+                      <h3>Regular Lasagna</h3>
+                      <p>Price: 789</p>
+                      <a href="order.html" class="order-button">Order Now</a>
+                  </div>
+              </div>
+          </body>
+          </html>
+          
+  <!-- 
+    - #FOOTER
+  -->
+  <footer class="footer">
+
+    <div class="footer-top" style="background-image: url('footer-illustration.png')">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="" class="logo">Flavour Hub<span class="span">.</span></a>
+
+          <p class="footer-text">
+            Eat,sleep and delicious Burger
+          </p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="https://www.facebook.com/" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="EgZjaHJvbWUqDggAEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTIGCAEQRRg5MhIIAhAAGEMYgwEYsQMYgAQYigUyDAgDEAAYQxiABBiKBTIGCAQQRRg8MgYIBRBFGD0yBggGEEUYPTIGCAcQRRg80gEIMzAxNWowajmoAgiwAgE" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.instagram.com/" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.pinterest.com/" class="social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Contact Info</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">+92 (062) 109-9222</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">Info@flavour Hub.com</p>
+          </li>
+
+          <li>
+            <address class="footer-list-item">Clifton, Karachi, CK 09514</address>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Opening Hours</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">Monday-Friday: 08:00-22:00</p>
+          </li>
+          <li>
+            <p class="footer-list-item">Tuesday 4PM: Till Mid Night</p>
+          </li>
+          <li>
+            <p class="footer-list-item">Saturday: 10:00-16:00</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
